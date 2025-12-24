@@ -23,7 +23,7 @@ in
           set fish_greeting # Disable greeting
           fish_vi_key_bindings # TODO search online how this actually works
         '';
-        shellInit = "starship init fish | source\n thefuck --alias | source\n direnv hook fish | source";
+        shellInit = "starship init fish | source\n direnv hook fish | source";
 
         shellAbbrs = {
           ns="nix-shell --command fish -p";

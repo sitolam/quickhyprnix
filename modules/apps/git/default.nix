@@ -17,24 +17,28 @@ in
     home.extraOptions = {
       programs.git = {
         enable = true;
-        userName = "Nebilam";
-        userEmail = "49345234+Nebilam@users.noreply.github.com";
-        difftastic.enable = true;
 
-        # TODO setup signing so commits are verified on github
-        extraConfig = {
+        settings = {
+          user.name = "Nebilam";
+          user.email = "49345234+Nebilam@users.noreply.github.com";
+
+          # TODO setup signing so commits are verified on github
           core.editor = "nvim";
           pull.rebase = "true";
           push.autoSetupRemote = true;
           init.defaultBranch = "main";
           status.showStash = true;
           # mergetool.keepBackup = false; # TODO what does this?
-
         };
 
         # includes = [
         #     { path = "~/.gitconfig"; }
         #   ];
+      };
+
+      programs.difftastic = {
+        enable = true;
+        git.enable = true;
       };
     };
   };

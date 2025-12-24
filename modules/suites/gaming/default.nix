@@ -38,7 +38,7 @@ in
 
       home.packages = with pkgs; [ 
         mangohud # TODO werk dit wel?
-        protonup
+        protonup-qt
         prismlauncher
       ];
 

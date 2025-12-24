@@ -50,30 +50,30 @@
 
   # Bootloader.
   boot = {
-  	kernelPackages = pkgs.linuxPackages_latest;
-  	loader = {
-  		timeout = 7;
-  		grub = {
-  			enable = true;
-  			devices = ["nodev"];
-  			efiSupport = true;
-  			useOSProber = true;
-  			configurationLimit = 5;
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      timeout = 7;
+      grub = {
+        enable = true;
+        devices = [ "nodev" ];
+        efiSupport = true;
+        useOSProber = true;
+        configurationLimit = 5;
         # TODO add garbage collector to clean up generations?
         extraEntries = ''
-    			menuentry "Reboot" {
-    				reboot
-    			}
-    			menuentry "Poweroff" {
-    				halt
-    			};
-    		'';
-  		};
-  		efi = {
-  			canTouchEfiVariables = true;
-  			efiSysMountPoint = "/boot";
-  		};
- 	  };
+          			menuentry "Reboot" {
+          				reboot
+          			}
+          			menuentry "Poweroff" {
+          				halt
+          			};
+          		'';
+      };
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
   };
 
   # Enable networking
@@ -100,7 +100,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = false;
 
- services.xserver = {
+  services.xserver = {
     xkb = {
       layout = "us";
       variant = "intl";
@@ -120,11 +120,11 @@
 
   };
   # TODO configure printer
-   services.avahi = {
-     enable = true;
-     nssmdns4 = true;
-     openFirewall = true;
-   };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -149,21 +149,28 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     initialPassword = "test-vm";
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-    # NOTE see current config at /etc/systemd/logind.conf
-    services.logind = {
-      powerKey = "suspend";
-      powerKeyLongPress = "poweroff";
-    };
+  # NOTE see current config at /etc/systemd/logind.conf
+  services.logind.settings.Login = {
+    powerKey = "suspend";
+    powerKeyLongPress = "poweroff";
+  };
 
   # virtualisation.libvirtd.enable = true;
   # programs.virt-manager.enable = true;
-# FIXME adds support for wayland with build-vm (still necessary?)
+  # FIXME adds support for wayland with build-vm (still necessary?)
   virtualisation.vmVariant = {
     # Taken from https://github.com/donovanglover/nix-config/commit/0bf134297b3a62da62f9ee16439d6da995d3fbff
     # to enable Hyprland to work on a virtualized GPU.
@@ -181,8 +188,7 @@
     };
   };
 
-
-    # This value determines the NixOS release from which the default
+  # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
