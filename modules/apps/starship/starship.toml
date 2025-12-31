@@ -1,0 +1,77 @@
+# LINK docs: https://starship.rs/config/#strings
+# \ -> escaping (also for newlines)
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$line_break\
+$character
+"""
+right_format = """
+$nix_shell\
+$python\
+$status\
+$cmd_duration\
+"""
+
+[directory]
+style = "blue"
+format = "[$path]($style)"
+truncation_length = 0
+truncate_to_repo = false
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+style = "white"
+format = " [$branch]($style)"
+
+[git_status]
+style = "cyan"
+
+# FIXME fix format
+# show a * when there are uncommited changes (and don't show a specific icon for modified, renamed, ...)
+# show ⇡ and ⇣ when ahead or behind remote respectively
+# show ≡ when there are staged changes
+# format = "([*$modified$renamed$deleted$untracked$staged]($style))[ $ahead_behind]($style)[$stashed]($style)[$conflicted](yellow)" 
+format = "(*$modified)[ $ahead_behind]($style)[$stashed]($style)[$conflicted](yellow)" 
+# combined='$modified$'
+# modified = ""
+renamed = ""
+deleted = ""
+untracked = ""
+staged = ""
+
+ahead = "⇡"
+behind = "⇣"
+
+stashed = "≡"
+conflicted = "⚠️"
+
+[git_state]
+style = "bright-black"
+format = '[ $state( $progress_current/$progress_total)]($style)'
+
+[cmd_duration]
+style = "yellow"
+format = "[ $duration]($style) "
+
+# exit code
+[status]
+style = "red"
+disabled = false
+format = "[$status]($style)"
+pipestatus = true
+pipestatus_format = "$pipestatus ($style)"
+
+[python]
+style = "bright-black"
+format = "[$virtualenv]($style) "
+
+[nix_shell] 
+format = '[$symbol( $name)]($style)'
+symbol = "❄️"
