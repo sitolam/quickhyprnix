@@ -50,7 +50,6 @@ in
       nwg-displays # TODO temp, mss configuren zodat het werkt met nix (zie docs https://github.com/nwg-piotr/nwg-displays)
       xwayland-satellite
       wl-clipboard
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default   
     ];
     home.extraOptions.home.packages = with pkgs; [ 
       # NOTE install unstable packages by typing: unstable.<packageName>

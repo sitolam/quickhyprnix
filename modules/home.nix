@@ -30,6 +30,7 @@ in
       extraSpecialArgs = {
         inherit inputs outputs username;
       };
+      backupFileExtension = "bak";
 
       users.${username} = lib.mkAliasDefinitions options.home.extraOptions;
     };
