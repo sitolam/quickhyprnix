@@ -18,6 +18,7 @@ in
   config = lib.mkIf cfg.enable {
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia.modesetting.enable = true;
+    hardware.nvidia.open = true;
 
     # hardware.nvidia.package = let
     #   rcu_patch = pkgs.fetchpatch {
@@ -39,16 +40,21 @@ in
     environment.variables = {
       CUDA_CACHE_PATH = "$XDG_CACHE_HOME/nv";
       NIXOS_OZONE_WL = "1"; # NOTE hint electron apps to use wayland
+      GBM_BACKEND = "nvidia-drm";
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      __GL_VRR_ALLOWED = "0";
     };
     environment.shellAliases = {nvidia-settings = "nvidia-settings --config='$XDG_CONFIG_HOME'/nvidia/settings";};
 
     hardware.nvidia.package =  config.boot.kernelPackages.nvidiaPackages.stable;
     hardware.nvidia.powerManagement.enable = true; # FIXME does this solve the problem with suspend, what does this excatly do?
 
+
     # Hyprland settings
     environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1"; # Fix cursor rendering issue on wlr nvidia.
 
-    hardware.opengl = {
+    hardware.graphics = {
       enable = true;
       # driSupport = true;
       # driSupport32 = true;
