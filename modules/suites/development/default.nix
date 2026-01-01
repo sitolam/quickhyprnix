@@ -18,32 +18,17 @@ in
     apps.direnv.enable = true;
     apps.vscode.enable = true;
     apps.rust.enable = true;
-    apps.c.enable = true;
-    apps.db.enable = true;
 
     home.extraOptions = {
       programs.ssh = {
         enable = true;
-        extraConfig = ''
-          # Personal github account
-          Host github.com
-          HostName github.com
-          PreferredAuthentications publickey
-          IdentityFile ~/.ssh/github
-
-          # UGent github account
-          Host github.ugent.be github.UGent.be
-          HostName github.ugent.be
-          PreferredAuthentications publickey
-          IdentityFile ~/.ssh/github-ugent
-
-          # subgit
-          Host subgit.ugent.be subgit.UGent.be
-          HostName subgit.ugent.be
-          PreferredAuthentications publickey
-          IdentityFile ~/.ssh/subgit
-
-        '';
+        # extraConfig = ''
+        #   # Personal github account
+        #   Host github.com
+        #   HostName github.com
+        #   PreferredAuthentications publickey
+        #   IdentityFile ~/.ssh/github
+        # '';
       };
 
 

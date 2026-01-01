@@ -30,13 +30,11 @@
     ./apps/fzf
     ./apps/zoxide
     ./apps/rust
-    ./apps/c
     ./apps/vsode
     ./apps/anki
     ./apps/signal
     ./apps/intellij
     ./apps/gparted
-    ./apps/db
     ./apps/postgresql
   ];
 }

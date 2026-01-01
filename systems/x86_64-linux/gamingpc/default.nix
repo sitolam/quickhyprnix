@@ -35,7 +35,7 @@
   hardware.nvidia.enable = true;
   theming.stylix.enable = true;
   suites.common.enable = true;
-  # suites.development.enable = true;
+  suites.development.enable = true;
   # suites.school.enable = true;
   # suites.gaming.enable = true;
   # suites.cad.enable = true;
