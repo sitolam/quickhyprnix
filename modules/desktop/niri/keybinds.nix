@@ -62,7 +62,7 @@ in
 
       "super+q".action = close-window;
       "super+b".action = spawn apps.browser;
-      "super+Return".action = spawn apps.terminal;
+      "super+t".action = spawn apps.terminal;
       #    "super+Space".action = spawn apps.appLauncher;
       "super+E".action = spawn apps.fileManager;
 
@@ -75,7 +75,7 @@ in
 
 
       "super+f".action = fullscreen-window;
-      "super+t".action = toggle-window-floating;
+      "super+w".action = toggle-window-floating;
 
       "control+shift+1".action.screenshot = [ ];
       "control+shift+2".action.screenshot-window = [ ];
