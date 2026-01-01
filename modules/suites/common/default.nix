@@ -16,7 +16,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    desktop.niri.enable = true;
+    desktop.niri.enable = false;
+    desktop.illogical-impulse.enable = true;
     system.nh.enable = true;
     keyboard.kanata.enable = true; # NOTE remapping keyboard
     apps.alacritty.enable = true;

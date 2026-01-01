@@ -11,6 +11,7 @@
     ./stylix
 
     ./desktop/niri
+    ./desktop/illogical-impulse
 
     ./suites/common
     ./suites/development

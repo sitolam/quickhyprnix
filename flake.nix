@@ -31,6 +31,18 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.quickshell.follows = "quickshell";
     };
+
+    # Custom dotfiles for illogical impulse
+    dotfiles = {
+      url = "git+https://github.com/sitolam/dots-hyprland?submodules=1";
+      flake = false;
+    };
+
+    illogical-flake = {
+      url = "github:sitolam/illogical-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dotfiles.follows = "dotfiles";  # Override to use your dotfiles
+    };
     
   };
 
