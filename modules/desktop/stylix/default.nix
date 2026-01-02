@@ -42,7 +42,6 @@ in
         };
 
         targets.hyprlock.enable = false;
-        targets.btop.enable = true;
         targets.spicetify.enable = false;
         targets.vscode.enable = false;
         targets.starship.enable = false;
@@ -85,6 +84,7 @@ in
         };
       };
       # targets.alacritty.enable = true;
+      targets.console.enable = false;
       targets.plymouth.enable = false;
       targets.grub.enable = false;
       # stylix.targets.nixos-icons.enable = true;
