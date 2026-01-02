@@ -37,5 +37,7 @@
     ./apps/intellij
     ./apps/gparted
     ./apps/postgresql
+
+    ./services/bluetooth.nix
   ];
 }
