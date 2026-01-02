@@ -30,7 +30,6 @@ in
         ./rules.nix
         ./autostart.nix
         ./scripts.nix
-        ./applications.nix
 
         ./noctaliashell.nix
       ];

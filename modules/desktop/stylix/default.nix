@@ -24,7 +24,7 @@ in
       stylix = {
         enable = true;
         polarity = "dark";
-        image = ../../non-nix/wallpapers/nord.png;
+        image = ../../../non-nix/wallpapers/nord.png;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
         override = {
           base02 = "#445060";
@@ -84,7 +84,7 @@ in
       # does not work >:(
       # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
-      image = ../../non-nix/wallpapers/nord.png;
+      image = ../../../non-nix/wallpapers/nord.png;
 
       fonts = {
         # FIXME change this?
