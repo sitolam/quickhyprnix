@@ -30,10 +30,9 @@ in
         ./rules.nix
         ./autostart.nix
         ./scripts.nix
-
-        ./noctaliashell.nix
       ];
-  };
+    };
+    desktop.noctalia.enable = true;
   
 
   };

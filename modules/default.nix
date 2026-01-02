@@ -11,6 +11,7 @@
 
     ./desktop/niri
     ./desktop/stylix
+    ./desktop/noctalia
     ./desktop/illogical-impulse
 
     ./suites/common
