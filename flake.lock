@@ -211,15 +211,15 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1767283088,
-        "narHash": "sha256-yksHrGsib4qxq2+wMS6aXvct69pn/sZHzfw4ONbei3w=",
-        "owner": "sitolam",
+        "lastModified": 1765415307,
+        "narHash": "sha256-7oV2IIQ9EGCkRANHOI5s6hbhEt/GJlMbI/yqsLOOqsY=",
+        "owner": "soymou",
         "repo": "illogical-flake",
-        "rev": "f5065ff6d584dee7fe41b5f27c42483553965bcc",
+        "rev": "9436ff4de634c907cea456a8284c164ac6943cfc",
         "type": "github"
       },
       "original": {
-        "owner": "sitolam",
+        "owner": "soymou",
         "repo": "illogical-flake",
         "type": "github"
       }

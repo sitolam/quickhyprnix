@@ -39,7 +39,7 @@
     };
 
     illogical-flake = {
-      url = "github:sitolam/illogical-flake";
+      url = "github:soymou/illogical-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.dotfiles.follows = "dotfiles";  # Override to use your dotfiles
     };
