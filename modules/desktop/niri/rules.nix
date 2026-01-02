@@ -34,7 +34,7 @@
     window-rules = [
       {
         matches = [ { is-focused = false; } ];
-        opacity = 0.95;
+        opacity = 0.9;
       }
       {
         matches = [

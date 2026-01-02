@@ -5,6 +5,7 @@
 
 {
   #TODO: add blur
+  #FIXME focus ring theming
   programs.niri = {
     enable = true;
     package = pkgs.niri;
