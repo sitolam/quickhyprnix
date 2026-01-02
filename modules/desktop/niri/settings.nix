@@ -4,10 +4,13 @@
 }:
 
 {
+  #TODO: add blur
   programs.niri = {
     enable = true;
     package = pkgs.niri;
     settings = {
+      prefer-no-csd = true;
+
       # workspaces = {
       #   "main" = {
       #     open-on-output = "DP-3";
@@ -23,53 +26,35 @@
       #   };
       # };
 
-      prefer-no-csd = true;
+      hotkey-overlay = {
+        skip-at-startup = true;
+      };
 
-      # hotkey-overlay = {
-      #   skip-at-startup = true;
-      # };
-
-      # layout = {
-
-      #   background-color = "#00000000";
-
-      #   focus-ring = {
-      #     enable = true;
-      #     width = 3;
-      #     active = {
-      #       color = "#A8AEFF";
-      #     };
-      #     inactive = {
-      #       color = "#505050";
-      #     };
-      #   };
-
-      #   gaps = 6;
-
-      #   struts = {
-      #     left = 20;
-      #     right = 20;
-      #     top = 20;
-      #     bottom = 20;
-      #   };
-      # };
-
-      # input = {
-      #   keyboard.xkb.layout = "us";
-      #   touchpad = {
-      #     click-method = "button-areas";
-      #     dwt = true;
-      #     dwtp = true;
-      #     natural-scroll = true;
-      #     scroll-method = "two-finger";
-      #     tap = true;
-      #     tap-button-map = "left-right-middle";
-      #     middle-emulation = true;
-      #     accel-profile = "adaptive";
-      #   };
-      #   focus-follows-mouse.enable = true;
-      #   warp-mouse-to-focus.enable = false;
-      # };
+      input = {
+        keyboard = {
+          xkb = {
+            layout = "us";
+            variant = "intl";
+            options = "compose::ralt";
+          };
+        };
+        touchpad = {
+          natural-scroll = true;
+          scroll-method = "two-finger";
+          tap = true;
+          tap-button-map = "left-right-middle";
+          middle-emulation = true;
+        };
+        focus-follows-mouse = {
+          enable = true;
+          max-scroll-amount = "0%";
+        };
+        warp-mouse-to-focus.enable = true;
+        workspace-auto-back-and-forth = true;
+      };
+      cursor = {
+        hide-after-inactive-ms = 5000;
+      };
 
       outputs = {
         "DP-3" = {
@@ -97,6 +82,23 @@
             y = 0;
           };
         };
+      };
+
+      layout = {
+        always-center-single-column = true;
+        gaps = 16;
+        preset-column-widths = [
+          { proportion = 1.0 / 4.0; }
+          { proportion = 1.0 / 3.0; }
+          { proportion = 1.0 / 2.0; }
+          { proportion = 2.0 / 3.0; }
+        ];
+        preset-window-heights = [
+          { proportion = 1.0 / 4.0; }
+          { proportion = 1.0 / 3.0; }
+          { proportion = 1.0 / 2.0; }
+          { proportion = 2.0 / 3.0; }
+        ];
       };
 
       environment = {

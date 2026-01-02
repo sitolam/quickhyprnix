@@ -32,49 +32,102 @@
     ];
 
     window-rules = [
-      # Browsers
       {
-        matches = [
-          { app-id = "firefox"; }
-        ];
-        open-on-workspace = "browser";
+        matches = [ { is-focused = false; } ];
+        opacity = 0.95;
       }
       {
         matches = [
-          { app-id = "zen"; }
+          {
+            app-id = "firefox";
+            title = "Picture-in-Picture";
+          }
+          { app-id = "mpv"; }
+          {
+            app-id = "steam";
+            title = "Friends List";
+          }
+          {
+            app-id = "steam";
+            title = "Steam Settings";
+          }
+          {
+            app-id = "jetbrains.*";
+            title = "Open File or Project";
+          }
+          {
+            app-id = "jetbrains.*";
+            title = "Settings";
+          }
+          {
+            app-id = "jetbrains.*";
+            title = "Confirm Exit";
+          }
+          {
+            app-id = "jetbrains.*";
+            title = "Update Project";
+          }
+          {
+            app-id = "zoom";
+            title = "Zoom Workplace";
+          }
+          {
+            app-id = "zoom";
+            title = "Settings";
+          }
+          {
+            app-id = "zoom";
+            title = "zoom";
+          }
+          {
+            app-id = "swayimg";
+          }
+          {
+            title = "Ouvrir.*";
+          }
+          {
+            title = "Extension.*";
+          }
+          {
+            title = "Enregistrer.*";
+          }
+          {
+            title = "Add.*";
+          }
         ];
-        open-on-workspace = "browser";
+        open-floating = true;
       }
-
-      # Discord
       {
         matches = [
-          { app-id = "vesktop"; }
+          { app-id = "org.keepassxc.KeePassXC"; }
         ];
-        open-on-workspace = "discord";
-      }
-
-      # Music
-      {
-        matches = [
-          { title = "spotify_player"; }
-        ];
-        open-on-workspace = "music";
+        block-out-from = "screen-capture";
       }
       {
         matches = [
-          { title = "Cider"; }
+          { app-id = "mpd-picker"; }
+          { app-id = "real-book-picker"; }
         ];
-        open-on-workspace = "music";
+        open-floating = true;
+        default-floating-position = {
+          x = 0;
+          y = 0;
+          relative-to = "top";
+        };
+        default-window-height = {
+          proportion = 0.3;
+        };
+        default-column-width = {
+          proportion = 0.4;
+        };
       }
-
       {
-        matches = [ { } ];
+        matches = [ ];
         geometry-corner-radius = {
-          top-left = 20.0;
-          top-right = 20.0;
-          bottom-left = 20.0;
-          bottom-right = 20.0;
+          bottom-left = 12.0;
+          bottom-right = 12.0;
+          top-left = 12.0;
+          top-right = 12.0;
         };
         clip-to-geometry = true;
       }
