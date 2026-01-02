@@ -14,7 +14,6 @@ let
 in
 {
 
-
   options.desktop = {
     illogical-impulse = {
       enable = lib.mkEnableOption "Enable illogical-impulse";
@@ -27,7 +26,7 @@ in
     programs.hyprland.enable = true;
 
     # Required services
-    services.geoclue2.enable = true;  # For QtPositioning
+    services.geoclue2.enable = true; # For QtPositioning
     # services.networkmanager.enable = true;  # For network management
 
     # System fonts (optional but recommended)
@@ -42,8 +41,7 @@ in
         inputs.illogical-flake.homeManagerModules.default
       ];
       programs.illogical-impulse.enable = true;
-  };
-  
+    };
 
   };
 }

@@ -14,7 +14,6 @@ let
 in
 {
 
-
   options.desktop = {
     niri = {
       enable = lib.mkEnableOption "Enable niri";
@@ -33,7 +32,6 @@ in
       ];
     };
     desktop.noctalia.enable = true;
-  
 
   };
 }

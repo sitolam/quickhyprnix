@@ -7,7 +7,7 @@
 
 let
   cfg = config.apps.git;
-in 
+in
 {
   options.apps.git = {
     enable = lib.mkEnableOption "Enable and configure git";

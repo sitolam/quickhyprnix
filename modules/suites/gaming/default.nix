@@ -1,4 +1,3 @@
-
 {
   # options,
   config,
@@ -9,7 +8,7 @@
 
 let
   cfg = config.suites.gaming;
-in 
+in
 {
   options.suites.gaming = {
     enable = lib.mkEnableOption "Enable the gaming suit";
@@ -32,18 +31,18 @@ in
       # ];
     };
 
-    programs.gamemode.enable = true; 
+    programs.gamemode.enable = true;
 
     home.extraOptions = {
 
-      home.packages = with pkgs; [ 
+      home.packages = with pkgs; [
         mangohud # TODO werk dit wel?
         protonup-qt
         prismlauncher
       ];
 
       home.sessionVariables = {
-        steam_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibilitytools.d"; 
+        steam_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
       };
 
     };

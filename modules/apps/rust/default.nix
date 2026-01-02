@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.rust;
-in 
+in
 {
   options.apps.rust = {
     enable = lib.mkEnableOption "Enable the rust programming language";
@@ -16,7 +16,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.extraOptions = {
-      home.packages = with pkgs; [ 
+      home.packages = with pkgs; [
         rustup
         gcc
         gnumake

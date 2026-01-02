@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.fzf;
-in 
+in
 {
   options.apps.fzf = {
     enable = lib.mkEnableOption "Enable fzf";

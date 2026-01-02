@@ -1,7 +1,15 @@
 # { options, pkgs, config, lib, inputs, ... }:
-{ options, config, lib, inputs, outputs, username, ... }:
+{
+  options,
+  config,
+  lib,
+  inputs,
+  outputs,
+  username,
+  ...
+}:
 
-let 
+let
   cfg = config.home;
 in
 {

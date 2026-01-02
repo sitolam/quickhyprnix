@@ -8,7 +8,7 @@
 
 let
   cfg = config.suites.school;
-in 
+in
 {
   options.suites.school = {
     enable = lib.mkEnableOption "Enable the school suit";
@@ -17,7 +17,7 @@ in
   config = lib.mkIf cfg.enable {
     apps.anki.enable = true;
     home.extraOptions = {
-      home.packages = with pkgs; [ 
+      home.packages = with pkgs; [
         flowtime
 
       ];

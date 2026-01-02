@@ -9,14 +9,14 @@
 # TODO look if I need to improve this
 let
   cfg = config.hardware.nvidia;
-in 
+in
 {
   options.hardware.nvidia = {
     enable = lib.mkEnableOption "Enable drivers and patches for Nvidia hardware.";
   };
 
   config = lib.mkIf cfg.enable {
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia.modesetting.enable = true;
     hardware.nvidia.open = true;
 
@@ -45,11 +45,12 @@ in
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       __GL_VRR_ALLOWED = "0";
     };
-    environment.shellAliases = {nvidia-settings = "nvidia-settings --config='$XDG_CONFIG_HOME'/nvidia/settings";};
+    environment.shellAliases = {
+      nvidia-settings = "nvidia-settings --config='$XDG_CONFIG_HOME'/nvidia/settings";
+    };
 
-    hardware.nvidia.package =  config.boot.kernelPackages.nvidiaPackages.stable;
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
     hardware.nvidia.powerManagement.enable = true; # FIXME does this solve the problem with suspend, what does this excatly do?
-
 
     # Hyprland settings
     environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1"; # Fix cursor rendering issue on wlr nvidia.

@@ -8,7 +8,7 @@
 
 let
   cfg = config.suites.development;
-in 
+in
 {
   options.suites.development = {
     enable = lib.mkEnableOption "Enable the development suit";
@@ -31,8 +31,7 @@ in
         # '';
       };
 
-
-      home.packages = with pkgs; [ 
+      home.packages = with pkgs; [
         # NOTE install unstable packages by typing: unstable.<packageName>
         shellcheck # NOTE to check shell scripts (+ andere programmeertalen?) in vscode
         unstable.devenv

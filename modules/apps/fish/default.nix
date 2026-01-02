@@ -9,7 +9,7 @@
 
 let
   cfg = config.apps.fish;
-in 
+in
 {
   options.apps.fish = {
     enable = lib.mkEnableOption "Enable fish";
@@ -26,17 +26,16 @@ in
         shellInit = "starship init fish | source\n direnv hook fish | source";
 
         shellAbbrs = {
-          ns="nix-shell --command fish -p";
+          ns = "nix-shell --command fish -p";
 
-          gst="git status"; 
-          gl="git log --graph --all --oneline";
-          gln="git log --oneline origin/HEAD..HEAD"; # log for everything new on this branch compared to main
-          gll="git log -p --ext-diff --graph --all"; # git log long (with external diff tool)
-          gd="git diff";
-          gds="git diff --staged";
-          gdo="git diff --no-ext-diff"; # original git diff (no external diff tool)
+          gst = "git status";
+          gl = "git log --graph --all --oneline";
+          gln = "git log --oneline origin/HEAD..HEAD"; # log for everything new on this branch compared to main
+          gll = "git log -p --ext-diff --graph --all"; # git log long (with external diff tool)
+          gd = "git diff";
+          gds = "git diff --staged";
+          gdo = "git diff --no-ext-diff"; # original git diff (no external diff tool)
         };
-
 
         plugins = [
           # TODO look at fish plugins: https://nixos.wiki/wiki/Fish

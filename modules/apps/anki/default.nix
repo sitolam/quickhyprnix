@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.anki;
-in 
+in
 {
   options.apps.anki = {
     enable = lib.mkEnableOption "Enable anki";

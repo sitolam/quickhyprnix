@@ -9,7 +9,7 @@
 
 let
   cfg = config.apps.zsh;
-in 
+in
 {
   options.apps.zsh = {
     enable = lib.mkEnableOption "Enable zsh";
@@ -26,7 +26,7 @@ in
           # strategy = [
           #   "completion"
           # ];
-        };    
+        };
         oh-my-zsh = {
           enable = true; # to get autocompletion for dir like in fish
         };
@@ -42,11 +42,11 @@ in
         initContent = ''
           # Load zsh-vi-mode first before other plugins
           source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-          
+
           # Configure vi mode
           ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
           ZVM_VI_INSERT_ESCAPE_BINDKEY='^['  # Explicitly bind ESC key
-          
+
           # Ensure vi-mode doesn't get overridden
           function zvm_after_init() {
             [ -f ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh ] && \

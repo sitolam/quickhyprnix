@@ -14,7 +14,6 @@ let
 in
 {
 
-
   options.services = {
     bluetooth = {
       enable = lib.mkEnableOption "Enable bluetooth";
@@ -23,13 +22,13 @@ in
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-        bluez
-        bluez-tools
+      bluez
+      bluez-tools
     ];
 
     hardware.bluetooth = {
-        enable = true;
-        package = pkgs.bluez;
+      enable = true;
+      package = pkgs.bluez;
     };
     services.blueman.enable = true;
   };

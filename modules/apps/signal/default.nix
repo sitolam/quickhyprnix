@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.signal;
-in 
+in
 {
   options.apps.signal = {
     enable = lib.mkEnableOption "Enable signal";
@@ -16,7 +16,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.extraOptions = {
-      home.packages = with pkgs; [ signal-desktop];
+      home.packages = with pkgs; [ signal-desktop ];
     };
     environment.variables = {
       # LANGUAGE = "en_US:nl_BE"; # NOTE to set spell checking language

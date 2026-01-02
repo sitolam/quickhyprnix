@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.ghostty;
-in 
+in
 {
   options.apps.ghostty = {
     enable = lib.mkEnableOption "Enable ghostty";

@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.alacritty;
-in 
+in
 {
   options.apps.alacritty = {
     enable = lib.mkEnableOption "Enable alacritty";

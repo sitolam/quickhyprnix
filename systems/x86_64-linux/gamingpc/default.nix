@@ -1,4 +1,13 @@
-{ config, pkgs, inputs, lib, myLib, username, hostname, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  myLib,
+  username,
+  hostname,
+  ...
+}:
 # added inputs (inputs from flake.nix for nixpkgs.url, home-manager)
 
 {
@@ -10,11 +19,11 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     ./hardware.nix
 
-    ];
+  ];
 
   networking.hostName = hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # TODO declaratively set wifi networks (also edurom): https://nixos.wiki/wiki/Wpa_supplicant 
+  # TODO declaratively set wifi networks (also edurom): https://nixos.wiki/wiki/Wpa_supplicant
 
   # desktop.hyprland.monitors = {
   #   "DP-2" = {
@@ -39,6 +48,5 @@
   # suites.school.enable = true;
   # suites.gaming.enable = true;
   # suites.cad.enable = true;
-
 
 }

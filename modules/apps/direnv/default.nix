@@ -7,7 +7,7 @@
 
 let
   cfg = config.apps.direnv;
-in 
+in
 {
   options.apps.direnv = {
     enable = lib.mkEnableOption "Enable direnv and nix-direnv";

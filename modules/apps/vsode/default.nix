@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.vscode;
-in 
+in
 {
   options.apps.vscode = {
     enable = lib.mkEnableOption "Enable vscode";

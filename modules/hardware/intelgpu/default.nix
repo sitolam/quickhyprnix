@@ -1,4 +1,3 @@
-
 {
   options,
   config,
@@ -10,7 +9,7 @@
 # TODO look if I need to improve this
 let
   cfg = config.hardware.intelgpu;
-in 
+in
 {
   options.hardware.intelgpu = {
     enable = lib.mkEnableOption "Enable drivers and patches for intelgpu hardware.";

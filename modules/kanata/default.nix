@@ -8,7 +8,7 @@
 
 let
   cfg = config.keyboard.kanata;
-in 
+in
 {
   options.keyboard.kanata = {
     enable = lib.mkEnableOption "enable remapping of keys";

@@ -2,15 +2,15 @@
   description = "Nebilam's NixOS config with flakes";
 
   inputs = {
-  
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-    	url = "github:nix-community/home-manager/release-25.11";
-    	inputs.nixpkgs.follows = "nixpkgs";
-   	};
-   	
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Hardware Configuration
     nixos-hardware.url = "github:nixos/nixos-hardware";
     # stylix.url = "github:danth/stylix";
@@ -41,27 +41,28 @@
     illogical-flake = {
       url = "github:soymou/illogical-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dotfiles.follows = "dotfiles";  # Override to use your dotfiles
+      inputs.dotfiles.follows = "dotfiles"; # Override to use your dotfiles
     };
-    
+
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs =
+    { self, nixpkgs, ... }@inputs:
     let
       # inherit (self) outputs;
       # stateVersion = "23.05"; # FIXME not necessary because never changes (can be hardcoded)
-      myLib = import ./lib { 
+      myLib = import ./lib {
         inherit (self) outputs;
-        inherit (nixpkgs) lib; 
+        inherit (nixpkgs) lib;
         # inherit pkgs;
         inherit inputs;
         inherit (inputs) home-manager;
-        # inherit stateVersion; 
-        };
+        # inherit stateVersion;
+      };
     in
-    
+
     {
-      nixosConfigurations = { 
+      nixosConfigurations = {
         gamingpc = myLib.custom.mkHost {
           hostname = "gamingpc";
           username = "otis";
@@ -77,7 +78,7 @@
           username = "otis";
           desktop = "nirri";
         };
-    };
-    overlays = import ./overlays { inherit inputs; };
+      };
+      overlays = import ./overlays { inherit inputs; };
     };
 }

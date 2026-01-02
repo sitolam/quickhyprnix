@@ -8,7 +8,7 @@
 
 let
   cfg = config.apps.zoxide;
-in 
+in
 {
   options.apps.zoxide = {
     enable = lib.mkEnableOption "Enable zoxide";
@@ -18,7 +18,7 @@ in
     home.extraOptions = {
       programs.zoxide = {
         enable = true;
-        enableFishIntegration = true; 
+        enableFishIntegration = true;
         enableZshIntegration = true;
         enableBashIntegration = true; # NOTE this only works if bash is enabled with home-manager
       };

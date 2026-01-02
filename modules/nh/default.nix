@@ -1,4 +1,3 @@
-
 {
   # options,
   config,
@@ -9,7 +8,7 @@
 
 let
   cfg = config.system.nh;
-in 
+in
 {
   options.system.nh = {
     # NOTE see https://www.youtube.com/watch?v=DnA4xNTrrqY + https://github.com/viperML/nh

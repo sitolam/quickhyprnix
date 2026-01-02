@@ -8,14 +8,14 @@
 
 let
   cfg = config.apps.ohmyposh;
-in 
+in
 {
   options.apps.ohmyposh = {
     enable = lib.mkEnableOption "Enable oh-my-posh (custom prompt)";
   };
 
   config = lib.mkIf cfg.enable {
-    home.extraOptions = { 
+    home.extraOptions = {
       programs.oh-my-posh = {
         enable = true;
         # package = pkgs.oh-my-posh; # TODO nodig?
@@ -27,11 +27,11 @@ in
         settings = {
           # TODO nog testen
           # TODO toevoegen nix shell: https://github.com/LuminarLeaf/arboretum/blob/main/modules/user/shell/tools/omp.nix
-          # TODO palette kleuren toevoegen?: https://github.com/LuminarLeaf/arboretum/blob/7e7a32659a1cb449ee7120c77457b01cb4dcd904/modules/user/shell/tools/omp.nix#L120 
+          # TODO palette kleuren toevoegen?: https://github.com/LuminarLeaf/arboretum/blob/7e7a32659a1cb449ee7120c77457b01cb4dcd904/modules/user/shell/tools/omp.nix#L120
           version = 2;
           final_space = true;
           console_title_template = "{{ .Shell }} in {{ .Folder }}";
-          
+
           blocks = [
             {
               type = "prompt";
@@ -80,7 +80,7 @@ in
                 {
                   # TODO status nog wat customizen
                   type = "status";
-                  # style = "plain"; # 
+                  # style = "plain"; #
                   foreground = "red";
                   # background = "transparent";
                   # properties = {
@@ -114,7 +114,7 @@ in
           };
 
         };
-      }; 
+      };
     };
   };
 }

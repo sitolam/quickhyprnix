@@ -1,4 +1,3 @@
-
 {
   options,
   config,
@@ -10,7 +9,7 @@
 # TODO look if I need to improve this
 let
   cfg = config.hardware.fingerprint;
-in 
+in
 {
   options.hardware.fingerprint = {
     enable = lib.mkEnableOption "Enable drivers and patches for fingerprint hardware.";
@@ -22,7 +21,6 @@ in
       serviceConfig.Type = "simple";
     };
     services.fprintd.enable = true;
-
 
   };
 }

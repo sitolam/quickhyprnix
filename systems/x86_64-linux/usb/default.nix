@@ -1,4 +1,13 @@
-{ config, pkgs, inputs, lib, myLib, username, hostname, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  myLib,
+  username,
+  hostname,
+  ...
+}:
 # added inputs (inputs from flake.nix for nixpkgs.url, home-manager)
 
 # NOTE temp config for dev box that is installed on a usb stick
@@ -11,13 +20,13 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     ./hardware.nix
 
-    ];
+  ];
 
   boot.kernelParams = [ "i915.force_probe=7d55" ];
 
   networking.hostName = hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # TODO declaratively set wifi networks (also edurom): https://nixos.wiki/wiki/Wpa_supplicant 
+  # TODO declaratively set wifi networks (also edurom): https://nixos.wiki/wiki/Wpa_supplicant
 
   desktop.hyprland.monitors = {
     "DP-7" = {
@@ -67,7 +76,7 @@
   # services.hypridle.enable = true;
   services.blueman.enable = true; # TODO move this to somewhere else
   # services.envfs.enable = true; # TODO eens uitproberen
-  
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 

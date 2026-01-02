@@ -1,48 +1,54 @@
-{ inputs, lib, outputs, ... }:
+{
+  inputs,
+  lib,
+  outputs,
+  ...
+}:
 lib.extend (
   _: libprev: {
     # namespace for custom functions
-    custom = rec{
+    custom = rec {
       # Helper function for generating host configs
-      mkHost = 
-        { 
-          hostname, 
-          username ? "nebilam", 
-          desktop ? null, 
-          platform ? "x86_64-linux" 
-        }: 
+      mkHost =
+        {
+          hostname,
+          username ? "nebilam",
+          desktop ? null,
+          platform ? "x86_64-linux",
+        }:
 
         let
           isISO = builtins.substring 0 4 hostname == "iso-";
           isLaptop = builtins.substring 0 7 hostname == "laptop-";
           isVm = builtins.substring 0 3 hostname == "vm-";
           isInstall = !isISO;
-          isWorkstation = builtins.isString desktop; 
+          isWorkstation = builtins.isString desktop;
 
-        in 
+        in
         # FIXME inputs.nixpkgs.lib.nixosSystem
         lib.nixosSystem {
-        specialArgs = {
-          inherit 
-            inputs 
-            # home-manager
-            outputs 
-            # myLib # TODO added myLib so it can be used in the system config (also add lib?)
-            desktop 
-            hostname 
-            platform 
-            username 
-            isInstall
-            isISO
-            isLaptop
-            isVm
-            isWorkstation;
+          specialArgs = {
+            inherit
+              inputs
+              # home-manager
+              outputs
+              # myLib # TODO added myLib so it can be used in the system config (also add lib?)
+              desktop
+              hostname
+              platform
+              username
+              isInstall
+              isISO
+              isLaptop
+              isVm
+              isWorkstation
+              ;
+          };
+          modules = [
+            ../systems/${platform}
+            ../modules
+          ]; # NOTE  extra to generate iso: ++ (inputs.nixpkgs.lib.optionals (installer != null) [ installer ]);
         };
-        modules = [
-          ../systems/${platform}
-          ../modules
-        ]; # NOTE  extra to generate iso: ++ (inputs.nixpkgs.lib.optionals (installer != null) [ installer ]);
-      };
 
       forAllSystems = inputs.nixpkgs.lib.genAttrs [
         "aarch64-linux"
@@ -53,7 +59,7 @@ lib.extend (
       ];
 
       # # ========================== Modules =========================== #
-      # # NOTE mkOpt (not mkOption) is a custom lib function 
+      # # NOTE mkOpt (not mkOption) is a custom lib function
       # mkOpt = type: default: description:
       #   # NOTE mkOption is a function from nixpkgs lib
       #   lib.mkOption {inherit type default description;};
