@@ -16,8 +16,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    desktop.niri.enable = false;
-    desktop.illogical-impulse.enable = true;
+    desktop.niri.enable = true;
+    desktop.illogical-impulse.enable = false;
     system.nh.enable = true;
     keyboard.kanata.enable = true; # NOTE remapping keyboard
     apps.alacritty.enable = true;
@@ -30,6 +30,7 @@ in
     # apps.zoxide.enable = true;
     apps.signal.enable = true;
     apps.gparted.enable = true;
+    services.bluetooth.enable = true;
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
