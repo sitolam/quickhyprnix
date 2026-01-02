@@ -4,7 +4,8 @@
   lib,
   inputs,
   ...
-}: 
+}:
+
 let
   cfg = config.theming.stylix;
 in
@@ -22,9 +23,31 @@ in
     home.extraOptions = {
       stylix = {
         enable = true;
+        polarity = "dark";
+        image = ../../non-nix/wallpapers/nord.png;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+        override = {
+          base02 = "#445060";
+          base05 = "#fffcf0";
+        };
+        opacity = {
+            terminal = 0.6;
+            applications = 0.6;
+            desktop = 0.6;
+        };
 
-        autoEnable = false;
-        targets.ghostty.enable = true; # FIXME does this work?
+        # iconTheme = {
+        #   enable = true;
+        #   dark = settings.icons;
+        #   light = settings.icons;
+        #   package = settings.iconsPkg;
+        # };
+
+        targets.hyprlock.enable = false;
+        targets.btop.enable = "nord";
+        targets.spicetify.enable = false;
+        targets.vscode.enable = false;
+        targets.starship.enable = false;
       };
 
     };
@@ -32,8 +55,6 @@ in
     # FIXME does stylix need to be enabled in the home module or nixos config?
     stylix = {
       enable = true;
-
-      autoEnable = false;
 
       cursor = {
         name = "Bibata-Modern-Classic";
@@ -63,7 +84,7 @@ in
       # does not work >:(
       # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
-      image = ./background_james_webb_4k.jpg;
+      image = ../../non-nix/wallpapers/nord.png;
 
       fonts = {
         # FIXME change this?

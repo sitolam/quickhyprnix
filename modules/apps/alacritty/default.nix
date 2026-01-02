@@ -22,10 +22,10 @@ in
 
         # TODO configure alacritty: https://home-manager-options.extranix.com/?query=alacr&release=release-24.05
         settings = {
-          font.normal = {
-            family = "MesloLGS Nerd Font Mono";
-            style = "regular";
-          };
+          # font.normal = {
+          #   family = "MesloLGS Nerd Font Mono";
+          #   style = "regular";
+          # };
         };
       };
     };
