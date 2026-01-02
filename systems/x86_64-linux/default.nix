@@ -100,6 +100,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = false;
 
+  services.displayManager.gdm.enable = true;
+
   services.xserver = {
     xkb = {
       layout = "us";
