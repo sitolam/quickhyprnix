@@ -37,6 +37,8 @@ in
     {
       #FIXME fix capitalisation
       #FIXME add comments
+      # TODO add ocr
+      # TODO add clipboard keybind
 
       # Quickshell Keybinds
       "super+Control+Return".action = spawn [
@@ -59,6 +61,20 @@ in
         "call"
         "lockScreen"
         "lock"
+      ];
+      "super+shift+backspace".action = spawn [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "sessionMenu"
+        "lockAndSuspend"
+      ];
+      "super+ctrl+backspace".action = spawn [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "sessionMenu"
+        "toggle"
       ];
 
       # Niri keybinds
