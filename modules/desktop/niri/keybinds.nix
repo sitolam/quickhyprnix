@@ -243,6 +243,11 @@ in
 
       "super+V".action = toggle-window-floating;
       "super+shift+V".action = switch-focus-between-floating-and-tiling;
+      "super+Ctrl+space".action = spawn [
+        "nsticky"
+        "sticky"
+        "toggle-active"
+      ];
 
       "super+W".action = toggle-column-tabbed-display;
 

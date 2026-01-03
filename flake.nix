@@ -27,6 +27,7 @@
       url = "github:heyoeyo/niri_tweaks";
       flake = false; # important
     };
+    nsticky.url = "github:lonerOrz/nsticky";
 
     quickshell = {
       url = "github:outfoxxed/quickshell";

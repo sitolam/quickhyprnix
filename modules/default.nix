@@ -10,6 +10,7 @@
     ./kanata
 
     ./desktop/niri
+    ./desktop/niri/plugins.nix
     ./desktop/stylix
     ./desktop/noctalia
     ./desktop/illogical-impulse

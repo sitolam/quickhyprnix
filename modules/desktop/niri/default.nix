@@ -32,6 +32,7 @@ in
       ];
     };
     desktop.noctalia.enable = true;
+    desktop.niri.plugins.nsticky.enable = true;
 
   };
 }
