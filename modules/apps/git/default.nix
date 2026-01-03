@@ -19,8 +19,8 @@ in
         enable = true;
 
         settings = {
-          user.name = "Nebilam";
-          user.email = "49345234+Nebilam@users.noreply.github.com";
+          user.name = "sitolam";
+          user.email = "79202140+sitolam@users.noreply.github.com";
 
           # TODO setup signing so commits are verified on github
           core.editor = "nvim";
