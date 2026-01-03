@@ -14,6 +14,7 @@ let
   cfg = config.desktop.noctalia;
 in
 {
+  #TODO split up into multiple files
   imports = [
     # ./keybinds.nix
     # ./monitors.nix
@@ -50,8 +51,6 @@ in
       imports = [
         inputs.noctalia.homeModules.default
       ];
-
-      #FIXME: module settings
 
       # configure options
       programs.noctalia-shell = {
@@ -181,6 +180,9 @@ in
           };
           audio = {
             externalMixer = "pavucontrol";
+          };
+          network = {
+            bluetoothRssiPollingEnabled = true;
           };
           brightness = {
             enableDdcSupport = true;
