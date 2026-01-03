@@ -38,6 +38,9 @@ in
     users.users.${username}.extraGroups = [ " i2c" ];
     boot.kernelModules = [ "i2c-dev" ];
 
+    environment.sessionVariables."NOCTALIA_SETTINGS_FALLBACK" =
+      "/home/${username}/.config/noctalia/gui-settings.json";
+
     home.extraOptions = {
       home.packages = with pkgs; [
 
