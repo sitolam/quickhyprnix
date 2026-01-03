@@ -32,7 +32,8 @@ in
         opacity = {
           terminal = 0.6;
           applications = 0.6;
-          desktop = 0.6;
+          desktop = 0.95;
+          popups = 0.95;
         };
 
         iconTheme = {
@@ -40,7 +41,6 @@ in
           dark = "WhiteSur";
           package = pkgs.whitesur-icon-theme;
         };
-
         targets.hyprlock.enable = false;
         targets.spicetify.enable = false;
         targets.vscode.enable = false;
