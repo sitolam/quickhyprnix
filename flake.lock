@@ -266,6 +266,22 @@
         "type": "github"
       }
     },
+    "niri-tweaks": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765924961,
+        "narHash": "sha256-Bag0SEo9IrhKLMxWHB6wAdhHHD9OgbBzttozWGAvxzM=",
+        "owner": "heyoeyo",
+        "repo": "niri_tweaks",
+        "rev": "56f1c31f3c07fd4f1d8be434c248481c21830005",
+        "type": "github"
+      },
+      "original": {
+        "owner": "heyoeyo",
+        "repo": "niri_tweaks",
+        "type": "github"
+      }
+    },
     "niri-unstable": {
       "flake": false,
       "locked": {
@@ -475,6 +491,7 @@
         "home-manager": "home-manager",
         "illogical-flake": "illogical-flake",
         "niri": "niri",
+        "niri-tweaks": "niri-tweaks",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",

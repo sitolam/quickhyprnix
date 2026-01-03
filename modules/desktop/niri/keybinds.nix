@@ -79,7 +79,7 @@ in
 
       # Niri keybinds
 
-      "super+slash".action = show-hotkey-overlay;
+      "super+slash".action = spawn "niri-parse-keybinds";
 
       "xf86audioraisevolume".action = volume-up;
       "xf86audiolowervolume".action = volume-down;

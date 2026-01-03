@@ -22,6 +22,12 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
+    # niri plugins
+    niri-tweaks = {
+      url = "github:heyoeyo/niri_tweaks";
+      flake = false; # important
+    };
+
     quickshell = {
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs-unstable";

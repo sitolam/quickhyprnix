@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -27,9 +28,16 @@ let
     ddcutil --bus=$BUS setvcp 10 "$new"
     echo "$new" > "$OSD_FILE"
   '';
+
+  niriParseKeybinds = pkgs.writeShellScriptBin "niri-parse-keybinds" ''
+    exec ${pkgs.python3}/bin/python \
+      ${inputs.niri-tweaks}/niri_parse_keybinds.py "$@" | fuzzel -d -w 100 -f monospace --match-mode exact'';
+
 in
 {
+  programs.fuzzel.enable = true;
   home.packages = [
     brightnessScript
+    niriParseKeybinds
   ];
 }
