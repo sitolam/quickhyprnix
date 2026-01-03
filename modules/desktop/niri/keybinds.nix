@@ -38,8 +38,6 @@ in
       #FIXME fix capitalisation
       #FIXME add comments
       # TODO add ocr
-      # TODO add clipboard keybind
-
       # Quickshell Keybinds
       "super+Control+Return".action = spawn [
         "noctalia-shell"
@@ -75,6 +73,20 @@ in
         "call"
         "sessionMenu"
         "toggle"
+      ];
+      "super+V".action = spawn [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "launcher"
+        "clipboard"
+      ];
+      "super+shift+period".action = spawn [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "launcher"
+        "emoji"
       ];
 
       # Niri keybinds
@@ -241,15 +253,15 @@ in
       "super+shift+Minus".action = set-window-height "-10%";
       "super+shift+Equal".action = set-window-height "+10%";
 
-      "super+V".action = toggle-window-floating;
-      "super+shift+V".action = switch-focus-between-floating-and-tiling;
+      "super+W".action = toggle-window-floating;
+      "super+shift+W".action = switch-focus-between-floating-and-tiling;
       "super+Ctrl+space".action = spawn [
         "nsticky"
         "sticky"
         "toggle-active"
       ];
 
-      "super+W".action = toggle-column-tabbed-display;
+      "super+A".action = toggle-column-tabbed-display;
 
       "super+S".action.screenshot = [ ];
       "ctrl+Print".action.screenshot-screen = [ ];
