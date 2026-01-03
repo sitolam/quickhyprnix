@@ -86,7 +86,7 @@
       };
 
       layout = {
-        always-center-single-column = true;
+        always-center-single-column = false;
         gaps = 16;
         preset-column-widths = [
           { proportion = 1.0 / 4.0; }
