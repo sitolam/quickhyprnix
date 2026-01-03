@@ -85,6 +85,10 @@ in
                 }
                 {
                   id = "MediaMini";
+                  showAlbumArt = true;
+                  showArtistFirst = false;
+                  showVisualizer = true;
+                  visualizerType = "wave";
                 }
               ];
               center = [
