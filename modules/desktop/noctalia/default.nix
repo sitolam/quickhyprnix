@@ -33,6 +33,7 @@ in
       wlsunset
       xdg-desktop-portal
       pavucontrol
+      libnotify
     ];
     services.udev.packages = [ pkgs.ddcutil ];
     users.users.${username}.extraGroups = [ " i2c" ];
