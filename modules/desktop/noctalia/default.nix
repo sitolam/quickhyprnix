@@ -121,6 +121,49 @@ in
               ];
             };
           };
+          desktopWidgets = {
+            enabled = true;
+            gridSnap = true;
+            monitorWidgets = [
+              {
+                name = "DP-3";
+                widgets = [
+                  {
+                    hideMode = "hidden";
+                    id = "MediaPlayer";
+                    roudnedCorners = true;
+                    scale = 1.5;
+                    showAlbumArt = true;
+                    showBackground = true;
+                    showButtons = true;
+                    showVisualizer = true;
+                    visualizerType = "linear";
+                    x = 1920 / 2 - 400 / 2 * 1.5; # TODO link to monitor resolution
+                    y = 920;
+                  }
+                ];
+              }
+              {
+                name = "HDMI-A-1";
+                widgets = [
+                  {
+                    hideMode = "hidden";
+                    id = "MediaPlayer";
+                    roudnedCorners = true;
+                    scale = 1.5;
+                    showAlbumArt = true;
+                    showBackground = true;
+                    showButtons = true;
+                    showVisualizer = true;
+                    visualizerType = "linear";
+                    x = 1920 / 2 - 400 / 2 * 1.5; # TODO link to monitor resolution
+                    y = 920;
+                  }
+                ];
+              }
+            ];
+          };
+
           location = {
             name = "Eeklo";
           };
