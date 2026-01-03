@@ -60,6 +60,10 @@ in
           general = {
             showSessionButtonsOnLockScreen = false;
           };
+          ui = {
+            fontDefaultScale = 1.1;
+            fontFixedScale = 1.1;
+          };
           bar = {
             floating = false;
             widgets = {
