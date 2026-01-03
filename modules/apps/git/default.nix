@@ -34,6 +34,12 @@ in
         # includes = [
         #     { path = "~/.gitconfig"; }
         #   ];
+
+        ignores = [
+          ".vscode/"
+          ".idea/"
+          ".direnv/"
+        ];
       };
 
       programs.difftastic = {
