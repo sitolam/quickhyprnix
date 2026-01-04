@@ -8,7 +8,6 @@
 }:
 
 let
-  homeDir = builtins.getEnv "HOME"; # gets $HOME at evaluation time
   localThemeFile = "/home/${username}/.config/stylix/current-theme.nix";
   defaultThemeFile = ./current-theme.nix;
   themeFile = if builtins.pathExists localThemeFile then localThemeFile else defaultThemeFile;
@@ -65,14 +64,13 @@ in
 
     };
 
-    # FIXME does stylix need to be enabled in the home module or nixos config?
     stylix = {
       enable = true;
 
       cursor = {
         name = "Bibata-Modern-Classic";
         package = pkgs.bibata-cursors;
-        size = 5;
+        size = 7;
       };
 
       image = theme.wallpaper;

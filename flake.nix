@@ -77,7 +77,7 @@
         };
         xps15 = myLib.custom.mkHost {
           hostname = "xps15";
-          username = "nebilam";
+          username = "otis";
           desktop = "nirri";
         };
         usb = myLib.custom.mkHost {

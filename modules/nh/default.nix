@@ -18,7 +18,6 @@ let
         notify-send "Error" "Failed to switch NixOS configuration."
     else
         reload-noctalia
-        notify-send -u low "Success" "NixOS configuration switched successfully."
     fi
     read -n 1 -p 'Press any key to continue...'
   '';

@@ -20,7 +20,6 @@ let
     # Kill and restart noctalia
     pkill quickshell || true
     nohup noctalia-shell >/dev/null 2>&1 &
-    notify-send -u low "Noctalia" "Reloaded Noctalia"
   '';
 in
 {
