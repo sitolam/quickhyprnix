@@ -52,13 +52,13 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
-      timeout = 7;
+      timeout = 5;
       grub = {
         enable = true;
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
-        configurationLimit = 5;
+        configurationLimit = 15;
         # TODO add garbage collector to clean up generations?
         extraEntries = ''
           			menuentry "Reboot" {
