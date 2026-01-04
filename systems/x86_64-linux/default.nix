@@ -100,7 +100,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = false;
 
-  # services.displayManager.gdm.enable = true; #FIXME not working
+  services.displayManager.gdm.enable = true; # FIXME not working
 
   services.xserver = {
     xkb = {
