@@ -11,6 +11,7 @@
 
     ./desktop/niri
     ./desktop/niri/plugins.nix
+    ./desktop/hypridle
     ./desktop/stylix
     ./desktop/noctalia
     ./desktop/illogical-impulse
