@@ -190,10 +190,6 @@
     };
   };
 
-  environment.pathsToLink = [
-    "/share/applications"
-    "/share/xdg-desktop-portal"
-  ];
   nix = {
     settings = {
       auto-optimise-store = true;
