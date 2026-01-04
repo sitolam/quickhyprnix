@@ -89,6 +89,9 @@ in
         "emoji"
       ];
 
+      # Custom keybinds
+      "super+shift+T".action = spawn "switch-theme";
+
       # Niri keybinds
 
       "super+slash".action = spawn "niri-parse-keybinds";

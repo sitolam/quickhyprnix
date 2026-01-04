@@ -13,10 +13,18 @@
         ];
         #place-within-backdrop = true;
       }
+      # {
+      #   matches = [
+      #     {
+      #       namespace = "^quickshell-overview$";
+      #     }
+      #   ];
+      #   place-within-backdrop = true;
+      # }
       {
         matches = [
           {
-            namespace = "^quickshell-overview$";
+            namespace = "^swww-daemon$";
           }
         ];
         place-within-backdrop = true;
@@ -24,7 +32,7 @@
       {
         matches = [
           {
-            namespace = "^swww-daemon$";
+            namespace = "^noctalia-lockscreen*";
           }
         ];
         place-within-backdrop = true;

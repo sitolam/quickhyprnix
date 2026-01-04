@@ -3,32 +3,45 @@
   pkgs,
   lib,
   inputs,
+  username,
   ...
 }:
 
 let
+  homeDir = builtins.getEnv "HOME"; # gets $HOME at evaluation time
+  localThemeFile = "/home/${username}/.config/stylix/current-theme.nix";
+  defaultThemeFile = ./current-theme.nix;
+  themeFile = if builtins.pathExists localThemeFile then localThemeFile else defaultThemeFile;
+
   cfg = config.theming.stylix;
+
+  themeLib = import ./themes { inherit lib; };
+  theme = themeLib.get (import themeFile).theming.stylix.theme;
 in
 {
   imports = [
     inputs.stylix.nixosModules.stylix
+    ./theme-switcher.nix
   ];
 
   options.theming.stylix = {
     enable = lib.mkEnableOption "Enable stylix";
+
+    theme = lib.mkOption {
+      type = lib.types.str;
+      default = "catppuccin-mocha";
+      description = "The stylix theme to use from stylix/themes";
+    };
   };
 
   config = lib.mkIf cfg.enable {
     home.extraOptions = {
       stylix = {
         enable = true;
-        polarity = "dark";
-        image = ../../../non-nix/wallpapers/jellyfish.jpg;
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-        # override = {
-        #   base02 = "#445060";
-        #   base05 = "#fffcf0";
-        # };
+        polarity = theme.polarity or "dark";
+        image = theme.wallpaper;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme.themeName}.yaml";
+        override = lib.mkIf (theme.override != null) theme.override;
         opacity = {
           terminal = 0.6;
           applications = 0.6;
@@ -41,10 +54,13 @@ in
           dark = "WhiteSur";
           package = pkgs.whitesur-icon-theme;
         };
-        targets.hyprlock.enable = false;
-        targets.spicetify.enable = false;
-        targets.vscode.enable = false;
-        targets.starship.enable = false;
+        targets = {
+          hyprlock.enable = false;
+          spicetify.enable = false;
+          vscode.enable = false;
+          starship.enable = true;
+          btop.enable = theme.btopTheme == null;
+        };
       };
 
     };
@@ -59,7 +75,8 @@ in
         size = 5;
       };
 
-      image = ../../../non-nix/wallpapers/jellyfish.jpg;
+      image = theme.wallpaper;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme.themeName}.yaml";
 
       fonts = {
         # FIXME change this?
