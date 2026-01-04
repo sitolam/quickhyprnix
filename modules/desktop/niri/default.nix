@@ -34,6 +34,15 @@ in
         ./scripts.nix
       ];
     };
+    # Various services to run when using niri (KDE module includes these when using Plasma)
+    services = {
+      power-profiles-daemon.enable = true;
+      upower.enable = true;
+      libinput.enable = true;
+      fwupd.enable = true;
+      accounts-daemon.enable = true;
+      gvfs.enable = true; # usb device mounting
+    };
     desktop.noctalia.enable = true;
     desktop.niri.plugins.nsticky.enable = true;
     desktop.niri.hypridle.enable = true;
