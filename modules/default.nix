@@ -32,6 +32,7 @@
     ./apps/direnv
     ./apps/fzf
     ./apps/zoxide
+    ./apps/tmux
     ./apps/rust
     ./apps/vsode
     ./apps/anki

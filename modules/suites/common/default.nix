@@ -21,6 +21,7 @@ in
     system.nh.enable = true;
     keyboard.kanata.enable = true; # NOTE remapping keyboard
     apps.alacritty.enable = true;
+    apps.tmux.enable = true;
     apps.zsh.enable = true;
     apps.fish.enable = true;
     apps.starship.enable = true; # TODO maybe at one suite to enable system config (fish, startship, ...)
