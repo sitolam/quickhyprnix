@@ -181,6 +181,7 @@ in
           };
           wallpaper = {
             directory = "${inputs.self}/non-nix/wallpapers";
+            overviewEnabled = true;
           };
           appLauncher = {
             enableClipboardHistory = true;

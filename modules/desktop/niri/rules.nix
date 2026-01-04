@@ -8,19 +8,11 @@
       {
         matches = [
           {
-            namespace = "^quickshell-wallpaper$";
+            namespace = "^noctalia-overview*";
           }
         ];
-        #place-within-backdrop = true;
+        place-within-backdrop = true;
       }
-      # {
-      #   matches = [
-      #     {
-      #       namespace = "^quickshell-overview$";
-      #     }
-      #   ];
-      #   place-within-backdrop = true;
-      # }
       {
         matches = [
           {
