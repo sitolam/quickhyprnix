@@ -12,9 +12,20 @@
 
 let
   cfg = config.desktop.noctalia;
+
+  reloadNoctalia = pkgs.writeShellScriptBin "reload-noctalia" ''
+    # Ensure pkill and notify-send are available
+    export PATH=${pkgs.procps}/bin:${pkgs.libnotify}/bin:$PATH
+
+    # Kill and restart noctalia
+    pkill quickshell || true
+    noctalia-shell &
+    notify-send "Noctalia" "Reloaded Noctalia"
+  '';
 in
 {
   #TODO split up into multiple files
+  #TODO automatically reload noctalia
   imports = [
     # ./keybinds.nix
     # ./monitors.nix
@@ -27,6 +38,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
     environment.systemPackages = with pkgs; [
       ddcutil
       cliphist
@@ -45,7 +57,7 @@ in
 
     home.extraOptions = {
       home.packages = with pkgs; [
-
+        reloadNoctalia
       ];
 
       imports = [
