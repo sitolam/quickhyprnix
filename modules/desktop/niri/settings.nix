@@ -7,25 +7,8 @@
   #TODO: add blur
   #FIXME focus ring theming
   programs.niri = {
-    enable = true;
-    package = pkgs.niri;
     settings = {
       prefer-no-csd = true;
-
-      # workspaces = {
-      #   "main" = {
-      #     open-on-output = "DP-3";
-      #   };
-      #   "browser" = {
-      #     open-on-output = "HDMI-A-1";
-      #   };
-      #   "discord" = {
-      #     open-on-output = "HDMI-A-1";
-      #   };
-      #   "music" = {
-      #     open-on-output = "HDMI-A-1";
-      #   };
-      # };
 
       hotkey-overlay = {
         skip-at-startup = true;

@@ -19,11 +19,14 @@ in
       enable = lib.mkEnableOption "Enable niri";
     };
   };
+  imports = [
+    inputs.niri.nixosModules.niri
+  ];
 
   config = lib.mkIf cfg.enable {
+    programs.niri.enable = true;
     home.extraOptions = {
       imports = [
-        inputs.niri.homeModules.niri # Import Niri's home-manager module
         ./settings.nix # Your custom configuration files for Niri
         ./keybinds.nix
         ./rules.nix
