@@ -35,7 +35,7 @@ in
         flake = "/home/${username}/quickhyprnix"; # TODO make dynamic
         # NOTE  set location of flake config (so you don't have to type it every time you rebuild)
         clean.enable = true; # does not run automatically (only when you run nh clean), but does clean home manager better?
-        clean.extraArgs = "--keep-since 30d --keep 15 --optimize";
+        clean.extraArgs = "--keep-since 30d --keep 15 --optimise";
       };
     };
     home.extraOptions.home.packages = with pkgs; [
