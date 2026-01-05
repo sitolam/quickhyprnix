@@ -35,6 +35,8 @@ in
     services.bluetooth.enable = true;
     services.kde-connect.enable = true;
     services.rclone.enable = true;
+    theming.stylix.enable = true;
+
     programs.nix-ld.enable = true; # Run unpatched dynamic binaries on NixOS
     home.extraOptions.programs.bash.enable = true; # to let home-manager manage bash config (for custom prompt, aliases, ...)
 
