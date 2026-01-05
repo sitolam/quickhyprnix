@@ -20,6 +20,7 @@
     ./suites/development
     ./suites/school
     ./suites/gaming
+    ./suites/media
 
     ./apps/distrobox
     ./apps/alacritty
@@ -39,6 +40,11 @@
     ./apps/signal
     ./apps/gparted
     ./apps/zen
+    ./apps/obs
+    ./apps/spotify
+    ./apps/gpu-screen-recorder
+    ./apps/droidcam
+    ./apps/noisetorch
 
     ./services/bluetooth.nix
   ];
