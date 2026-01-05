@@ -47,5 +47,6 @@
   suites.development.enable = true;
   suites.media.enable = true;
   suites.school.enable = true;
+  suites.gaming.enable = true;
 
 }

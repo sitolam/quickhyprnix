@@ -15,6 +15,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    apps.modrinth.enable = false;
+
     programs.steam = {
       enable = true;
       gamescopeSession.enable = true;
@@ -34,15 +36,16 @@ in
     programs.gamemode.enable = true;
 
     home.extraOptions = {
-
       home.packages = with pkgs; [
         mangohud # TODO werk dit wel?
         protonup-qt
         prismlauncher
+        lutris
+        heroic
       ];
 
       home.sessionVariables = {
-        steam_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
+        STEAM_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
       };
 
     };

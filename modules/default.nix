@@ -43,6 +43,7 @@
     ./apps/obs
     ./apps/spotify
     ./apps/antimicrox
+    ./apps/modrinth
     ./apps/gpu-screen-recorder
     ./apps/droidcam
     ./apps/noisetorch
