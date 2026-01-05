@@ -21,6 +21,7 @@
     ./suites/school
     ./suites/gaming
     ./suites/media
+    ./suites/social
 
     ./apps/distrobox
     ./apps/alacritty
