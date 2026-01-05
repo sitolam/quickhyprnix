@@ -52,5 +52,6 @@
 
     ./services/bluetooth.nix
     ./services/kde-connect.nix
+    ./services/rclone
   ];
 }
