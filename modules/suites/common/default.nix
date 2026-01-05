@@ -35,6 +35,9 @@ in
     services.bluetooth.enable = true;
     services.kde-connect.enable = true;
     services.rclone.enable = true;
+    programs.nix-ld.enable = true; # Run unpatched dynamic binaries on NixOS
+    home.extraOptions.programs.bash.enable = true; # to let home-manager manage bash config (for custom prompt, aliases, ...)
+
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
@@ -49,6 +52,7 @@ in
       btop
       nil # LSP for nix
       wget
+      zip
       unzip
       neovim
       wl-clipboard
@@ -57,16 +61,22 @@ in
       xwayland-satellite
       wl-clipboard
       nixfmt
+      bat
+      unp
+      ncdu
+      qpwgraph
+      udiskie
+      ntfs3g
+      killall
     ];
     home.extraOptions.home.packages = with pkgs; [
       # NOTE install unstable packages by typing: unstable.<packageName>
       firefox
       mission-center
       resources # TODO test out this system monito
+      gnome-clocks
+      wine
     ];
-
-    programs.nix-ld.enable = true; # Run unpatched dynamic binaries on NixOS
-    home.extraOptions.programs.bash.enable = true; # to let home-manager manage bash config (for custom prompt, aliases, ...)
 
     # aliases (set for all shell configured with home-manager)
     home.extraOptions.home.shellAliases = {
