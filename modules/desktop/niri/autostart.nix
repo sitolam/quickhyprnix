@@ -17,6 +17,20 @@
     { command = [ "noctalia-shell" ]; }
     { command = [ "vesktop" ]; }
     { command = [ "swww-daemon" ]; }
+    { command = [ "kdeconnectd" ]; }
+    { command = [ "discord --start-minimized" ]; }
+    {
+      command = [
+        "signal-desktop"
+        "--start-in-tray"
+      ];
+    }
+    {
+      command = [
+        "element-desktop"
+        "--hidden"
+      ];
+    }
     #{ command = ["${pkgs.swaybg}/bin/swaybg" "-o" "DP-1" "-i" "/home/chris/nixos/assets/wallpapers/clouds.png" "-m" "fill"]; }
     #{ command = ["sh" "-c" "swww-daemon & swww img /home/chris/nixos/wallpapers/cloud.png"]; }
   ];
