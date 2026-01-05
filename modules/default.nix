@@ -42,6 +42,7 @@
     ./apps/zen
     ./apps/obs
     ./apps/spotify
+    ./apps/antimicrox
     ./apps/gpu-screen-recorder
     ./apps/droidcam
     ./apps/noisetorch
