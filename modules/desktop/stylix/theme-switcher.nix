@@ -21,7 +21,7 @@ let
 
     notify-send -u low "Stylix" "Switching to $THEME"
 
-    alacritty -e bash -c "nh os switch /home/otis/quickhyprnix --i?mpure"
+    alacritty -e bash -c "nh os switch /home/otis/quickhyprnix --impure"
     reload-noctalia #FIXME fix the hardcoded path and try to remove the alacritty terminal
 
   '';
