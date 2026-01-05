@@ -47,5 +47,6 @@
     ./apps/noisetorch
 
     ./services/bluetooth.nix
+    ./services/kde-connect.nix
   ];
 }

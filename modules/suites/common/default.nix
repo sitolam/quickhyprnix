@@ -33,6 +33,7 @@ in
     apps.gparted.enable = true;
     apps.zen.enable = true;
     services.bluetooth.enable = true;
+    services.kde-connect.enable = true;
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
