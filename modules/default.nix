@@ -38,6 +38,7 @@
     ./apps/anki
     ./apps/signal
     ./apps/gparted
+    ./apps/zen
 
     ./services/bluetooth.nix
   ];

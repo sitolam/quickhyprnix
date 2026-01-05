@@ -31,6 +31,7 @@ in
     apps.zoxide.enable = true;
     apps.signal.enable = true;
     apps.gparted.enable = true;
+    apps.zen.enable = true;
     services.bluetooth.enable = true;
     # List packages installed in system profile. To search, run:
     # $ nix search wget
