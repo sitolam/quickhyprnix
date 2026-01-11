@@ -29,7 +29,7 @@ in
                 inherit name;
                 value =
                   let
-                    zen-browser = config.programs.zen-browser.package;
+                    zen-browser = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
                   in
                   zen-browser.meta.desktopFileName;
               })
@@ -56,6 +56,7 @@ in
         {
           associations.added = associations;
           defaultApplications = associations;
+          enable = true;
         };
 
       programs.zen-browser = {

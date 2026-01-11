@@ -59,7 +59,7 @@ in
           vscode.enable = false;
           starship.enable = true;
           btop.enable = theme.btopTheme == null;
-          zen-browser.profileNames = [ "default" ];
+          zen-browser.enable = false;
         };
       };
 
