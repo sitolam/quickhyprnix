@@ -42,6 +42,7 @@ in
         ];
       };
     };
+    environment.shells = with pkgs; [ fish ];
 
     users.users.${username} = {
       shell = pkgs.fish;
