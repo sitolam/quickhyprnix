@@ -46,6 +46,7 @@ in
       xdg-desktop-portal
       pavucontrol
       libnotify
+      wtype
     ];
     services.udev.packages = [ pkgs.ddcutil ];
     users.users.${username}.extraGroups = [ " i2c" ];
@@ -61,6 +62,7 @@ in
 
       imports = [
         inputs.noctalia.homeModules.default
+        ./plugins.nix
       ];
 
       # configure options
@@ -70,6 +72,9 @@ in
         settings = {
           general = {
             showSessionButtonsOnLockScreen = false;
+            avatarImage = pkgs.copyPathToStore "${inputs.self}/non-nix/avatars/coolman.png";
+            showScreenCorners = true;
+            forceBlackScreenCorners = true;
           };
           ui = {
             fontDefaultScale = 1.1;
@@ -79,6 +84,9 @@ in
             floating = false;
             widgets = {
               left = [
+                {
+                  id = "plugin:privacy-indicator";
+                }
                 {
                   icon = "rocket";
                   id = "CustomButton";
@@ -109,10 +117,10 @@ in
               ];
               right = [
                 {
-                  id = "ScreenRecorder";
+                  id = "Tray";
                 }
                 {
-                  id = "Tray";
+                  id = "plugin:timer";
                 }
                 {
                   id = "NotificationHistory";
@@ -128,6 +136,24 @@ in
                 }
                 {
                   id = "ControlCenter";
+                }
+              ];
+            };
+          };
+          controlCenter = {
+            shortcuts = {
+              left = [
+                {
+                  id = "Network";
+                }
+                {
+                  id = "Bluetooth";
+                }
+                {
+                  id = "WallpaperSelector";
+                }
+                {
+                  id = "plugin:screen-recorder";
                 }
               ];
             };
@@ -184,14 +210,27 @@ in
           };
           appLauncher = {
             enableClipboardHistory = true;
+            autoPasteClipboard = true;
           };
           notifications = {
             saveToHistory = {
               low = false;
             };
           };
+          osd = {
+            enabledTypes = [
+              0
+              1
+              2
+              null
+              null
+              null
+              3
+            ];
+          };
           audio = {
             externalMixer = "pavucontrol";
+            prefferedPlayer = "spotify";
           };
           network = {
             bluetoothRssiPollingEnabled = true;
@@ -202,11 +241,14 @@ in
           nightLight = {
             enabled = true;
           };
+          systemMonitor = {
+            enableDgpuMonitoring = true;
+          };
           # configure noctalia here; defaults will
           # be deep merged with these attributes.
+          # this may also be a string or a path to a JSON file,
+          # but in this case must include *all* settings.
         };
-        # this may also be a string or a path to a JSON file,
-        # but in this case must include *all* settings.
       };
     };
   };
