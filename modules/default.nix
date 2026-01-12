@@ -49,6 +49,7 @@
     ./apps/gpu-screen-recorder
     ./apps/droidcam
     ./apps/noisetorch
+    ./apps/nautilus
 
     ./services/bluetooth.nix
     ./services/kde-connect.nix

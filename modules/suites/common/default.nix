@@ -32,6 +32,7 @@ in
     apps.gparted.enable = true;
     apps.zen.enable = true;
     apps.scrcpy.enable = true;
+    apps.nautilus.enable = true;
     services.bluetooth.enable = true;
     services.kde-connect.enable = true;
     services.rclone.enable = true;
