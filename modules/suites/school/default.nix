@@ -23,6 +23,7 @@ in
         flowtime
         onlyoffice-desktopeditors
         zotero
+        typst
 
       ];
     };
