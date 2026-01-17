@@ -37,7 +37,8 @@ in
         systemd.user.services.rCloneMounts = {
           Unit = {
             Description = "Mount all rClone configurations";
-            After = [ "network-online.target" ];
+            After = [ "graphical-session.target" ];
+            Wants = [ "graphical-session.target" ];
           };
           Service =
             let
@@ -72,7 +73,7 @@ in
                 done
               ''}";
             };
-          Install.WantedBy = [ "default.target" ];
+          Install.WantedBy = [ "graphical-session.target" ];
         };
       };
   };
