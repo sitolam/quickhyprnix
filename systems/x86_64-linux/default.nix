@@ -155,6 +155,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "input"
     ];
     initialPassword = "test-vm";
   };
