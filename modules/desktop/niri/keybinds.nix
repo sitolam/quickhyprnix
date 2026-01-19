@@ -149,17 +149,17 @@ in
 
       "super+Page_Down".action = focus-workspace-down;
       "super+Page_Up".action = focus-workspace-up;
-      "super+U".action = focus-workspace-down;
-      "super+I".action = focus-workspace-up;
+      "super+U".action = focus-workspace-up;
+      "super+I".action = focus-workspace-down;
       "super+Ctrl+Page_Down".action = move-column-to-workspace-down;
       "super+Ctrl+Page_Up".action = move-column-to-workspace-up;
-      "super+Ctrl+U".action = move-column-to-workspace-down;
-      "super+Ctrl+I".action = move-column-to-workspace-up;
+      "super+Ctrl+U".action = move-column-to-workspace-up;
+      "super+Ctrl+I".action = move-column-to-workspace-down;
 
       "super+Shift+Page_Down".action = move-workspace-down;
       "super+Shift+Page_Up".action = move-workspace-up;
-      "super+Shift+U".action = move-workspace-down;
-      "super+Shift+I".action = move-workspace-up;
+      "super+Shift+U".action = move-workspace-up;
+      "super+Shift+I".action = move-workspace-down;
 
       "super+WheelScrollDown" = {
         cooldown-ms = 150;
