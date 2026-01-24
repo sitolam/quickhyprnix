@@ -123,6 +123,9 @@ in
                   id = "plugin:timer";
                 }
                 {
+                  id = "plugin:pomodoro";
+                }
+                {
                   id = "NotificationHistory";
                 }
                 {

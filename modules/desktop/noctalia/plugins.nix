@@ -13,6 +13,11 @@
       removeMargins = false;
     };
   };
+  home.file.".config/noctalia/plugins/pomodoro/settings.json" = {
+    text = builtins.toJSON {
+      workDuration = 20;
+    };
+  };
 
   home.file.".config/noctalia/plugins.json" = {
     text = builtins.toJSON {
@@ -37,6 +42,9 @@
           enabled = true;
         };
         unicode-picker = {
+          enabled = true;
+        };
+        pomodoro = {
           enabled = true;
         };
       };
