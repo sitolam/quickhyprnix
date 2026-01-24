@@ -36,6 +36,9 @@
         screen-recorder = {
           enabled = true;
         };
+        unicode-picker = {
+          enabled = true;
+        };
       };
     };
   };
