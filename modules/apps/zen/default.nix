@@ -131,7 +131,7 @@ in
               "firefox-extension@steamdb.info" = "steam-database";
               "{861a3982-bb3b-49c6-bc17-4f50de104da1}" = "custom-user-agent-revived";
               "{jid0-YQz0l1jthOIz179ehuitYAOdBEs@jetpack}" = "print-friendly-and-pdf";
-              "{30b15d56-b2fa-4cb2-98fd-7b5e26306483}" = "stayfree";
+              # "{30b15d56-b2fa-4cb2-98fd-7b5e26306483}" = "stayfree";
             };
             Preferences = mkLockedAttrs {
               "browser.aboutConfig.showWarning" = false;
@@ -200,21 +200,35 @@ in
               workspace = spaces."Personal".id;
               url = "https://github.com";
               position = 101;
-              isEssential = true;
+              isEssential = false;
             };
             "YouTube" = {
               id = "48e8a119-5a14-3464-9545-91c8e8dd3bf6";
               workspace = spaces."Entertainment".id;
               url = "https://youtube.com";
-              position = 101;
-              isEssential = true;
+              position = 102;
+              isEssential = false;
             };
             "Notion" = {
-              id = "48e8a119-5a14-7890-9545-91c8e8dd3bf6";
+              id = "48e8a119-5a14-7890-9545-91c8e8dd3bf7";
               workspace = spaces."School".id;
               url = "https://www.notion.so/";
-              position = 101;
-              isEssential = true;
+              position = 103;
+              isEssential = false;
+            };
+            "Smartschool" = {
+              id = "9d8a8f91-7e29-4688-ae2e-da4e49d4a179";
+              workspace = spaces."School".id;
+              url = "https://tandem.smartschool.be/";
+              isEssential = false;
+              position = 104;
+            };
+            "Pelckmans" = {
+              id = "9d8a8f91-7e29-4688-ae2e-da4e49d4a178";
+              workspace = spaces."School".id;
+              url = "https://www.pelckmansportaal.be/";
+              isEssential = false;
+              position = 105;
             };
           };
 
