@@ -47,6 +47,9 @@
         pomodoro = {
           enabled = true;
         };
+        translator = {
+          enabled = true;
+        };
       };
     };
   };
