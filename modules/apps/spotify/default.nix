@@ -38,6 +38,10 @@ in
             powerBar # Spotlight-like search bar for spotify.
             songStats # Show a song's stats, like dancability, tempo, and key.
             history # Adds a page that shows your listening history.
+            skipOrPlayLikedSongs # Skips songs you have liked or play songs you haven't liked
+            goToSong # Go to the currrently playing song in a playlist /or/ currently playing playlist.
+            playlistIntersection # See songs in common between two playlists or songs only present in one playlist
+            playNext # Add the option to context menu to add stuff(albums, tracks, playlists) to the top of the queue.
           ];
 
           enabledCustomApps = with spicePkgs.apps; [
