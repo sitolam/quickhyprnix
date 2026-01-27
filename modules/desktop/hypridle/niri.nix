@@ -26,16 +26,16 @@ in
 
           listener = [
             {
-              timeout = 240;
+              timeout = 360;
               on-timeout = "noctalia-shell ipc call lockScreen lock";
             }
             {
-              timeout = 300;
+              timeout = 600;
               on-timeout = "niri msg action power-off-monitors";
               on-resume = "niri msg action power-on-monitors";
             }
             {
-              timeout = 600;
+              timeout = 900;
               on-timeout = "noctalia-shell ipc call sessionMenu lockAndSuspend";
             }
           ];
