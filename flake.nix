@@ -39,6 +39,7 @@
     };
     noctalia-plugins = {
       url = "github:noctalia-dev/noctalia-plugins";
+      inputs.noctalia.follows = "noctalia";
       flake = false;
     };
 
