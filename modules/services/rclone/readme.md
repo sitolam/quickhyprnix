@@ -13,3 +13,7 @@
 ## Mount drives
 
 Now nixos will mount your configs automatically after a reboot, to mount immediately run `reload-rclone`
+
+## Debugging
+Getting authentication error after a while?
+Try `rclone config reconnect <config>`
