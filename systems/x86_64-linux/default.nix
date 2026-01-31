@@ -44,7 +44,23 @@
   # Fonts
   fonts = {
     packages = with pkgs; [
+      corefonts
+      vista-fonts
+      dejavu_fonts
+      freefont_ttf
+      gyre-fonts
+      liberation_ttf
+      unifont
       nerd-fonts.meslo-lg
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
     ];
   };
 
