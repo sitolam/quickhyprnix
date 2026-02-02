@@ -88,6 +88,13 @@ in
         "launcher"
         "emoji"
       ];
+      "super+return".action = spawn [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "plugin:assistant-panel"
+        "toggle"
+      ];
 
       # Custom keybinds
       "super+shift+T".action = spawn "switch-theme";

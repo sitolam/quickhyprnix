@@ -50,6 +50,9 @@
         translator = {
           enabled = true;
         };
+        assistant-panel = {
+          enabled = true;
+        };
       };
     };
   };
