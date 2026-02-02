@@ -47,6 +47,7 @@ in
       pavucontrol
       libnotify
       wtype
+      gpu-screen-recorder
     ];
     services.udev.packages = [ pkgs.ddcutil ];
     users.users.${username}.extraGroups = [ " i2c" ];
