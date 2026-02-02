@@ -206,6 +206,7 @@ in
 
           location = {
             name = "Eeklo";
+            firstDayOfWeek = -1;
           };
           wallpaper = {
             directory = "${inputs.self}/non-nix/wallpapers";
