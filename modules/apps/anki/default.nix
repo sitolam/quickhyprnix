@@ -15,7 +15,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.extraOptions.home.packages = with pkgs; [ anki-bin ];
+    home.extraOptions.home.packages = with pkgs; [ anki ];
     #TODO maybe with this option and addons here (not with syncthing), maybe disable stylix theming but custom theming with recolor
 
     # home.extraOptions.programs.anki = {
