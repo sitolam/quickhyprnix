@@ -56,6 +56,7 @@
         niri-overview-launcher = {
           enabled = true;
         };
+      };
     };
   };
 }
