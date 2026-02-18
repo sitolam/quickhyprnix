@@ -56,10 +56,6 @@
         niri-overview-launcher = {
           enabled = true;
         };
-        polkit-agent = {
-          enabled = true;
-        };
-      };
     };
   };
 }
