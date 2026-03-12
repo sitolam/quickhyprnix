@@ -75,6 +75,7 @@ in
     home.extraOptions.home.packages = with pkgs; [
       # NOTE install unstable packages by typing: unstable.<packageName>
       firefox
+      inputs.helium.defaultPackage.${stdenv.hostPlatform.system} # TODO: use syncthing to sync this between devices
       mission-center
       resources # TODO test out this system monito
       gnome-clocks
