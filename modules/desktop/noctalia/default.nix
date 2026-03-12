@@ -87,7 +87,7 @@ in
             settingsPanelSideBarCardStyle = true;
           };
           bar = {
-            floating = false;
+            floating = true;
             widgets = {
               left = [
                 {
