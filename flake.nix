@@ -16,8 +16,8 @@
     # stylix.url = "github:danth/stylix";
 
     stylix = {
-      url = "github:danth/stylix/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/stylix/release-25.11";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri.url = "github:sodiboo/niri-flake";
@@ -43,23 +43,25 @@
       flake = false;
     };
 
-    # Custom dotfiles for illogical impulse
-    dotfiles = {
-      url = "git+https://github.com/sitolam/dots-hyprland?submodules=1";
-      flake = false;
-    };
+    # # Custom dotfiles for illogical impulse
+    # dotfiles = {
+    #   url = "git+https://github.com/sitolam/dots-hyprland?submodules=1";
+    #   flake = false;
+    # };
 
-    illogical-flake = {
-      url = "github:soymou/illogical-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dotfiles.follows = "dotfiles"; # Override to use your dotfiles
-    };
+    # illogical-flake = {
+    #   url = "github:soymou/illogical-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.dotfiles.follows = "dotfiles"; # Override to use your dotfiles
+    # };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    helium.url = "github:FKouhai/helium2nix/main";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
