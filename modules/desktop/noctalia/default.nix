@@ -152,6 +152,9 @@ in
               ];
             };
           };
+          dock = {
+            showDockIndicator = true;
+          };
           controlCenter = {
             shortcuts = {
               left = [
