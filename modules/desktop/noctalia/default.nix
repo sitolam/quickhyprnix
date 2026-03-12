@@ -73,6 +73,10 @@ in
         settings = {
           general = {
             showSessionButtonsOnLockScreen = false;
+            passwordChars = true;
+            enableLockScreenMediaControls = true;
+            lockScreenAnimations = true;
+            lockScreenBlur = 1;
             avatarImage = pkgs.copyPathToStore "${inputs.self}/non-nix/avatars/coolman.png";
             showScreenCorners = true;
             forceBlackScreenCorners = true;
