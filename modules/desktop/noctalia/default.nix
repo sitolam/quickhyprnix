@@ -84,6 +84,7 @@ in
           ui = {
             fontDefaultScale = 1.1;
             fontFixedScale = 1.1;
+            settingsPanelSideBarCardStyle = true;
           };
           bar = {
             floating = false;
