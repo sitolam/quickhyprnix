@@ -91,11 +91,19 @@
           {
             title = "Enregistrer.*";
           }
-          {
-            title = "Add.*";
-          }
+          # {
+          #   title = "Add.*";
+          # }
         ];
         open-floating = true;
+      }
+      {
+        matches = [
+          {
+            title = "Image Occlusion Enhanced*";
+          }
+        ];
+        open-maximized = true;
       }
       {
         matches = [
