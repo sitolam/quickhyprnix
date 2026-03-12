@@ -96,12 +96,20 @@ in
         "toggle"
       ];
 
+      "super+slash".action = spawn [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "plugin:keybind-cheatsheet"
+        "toggle"
+      ];
+
       # Custom keybinds
       "super+shift+T".action = spawn "switch-theme";
 
       # Niri keybinds
 
-      "super+slash".action = spawn "niri-parse-keybinds";
+      # "super+slash".action = spawn "niri-parse-keybinds";
 
       "xf86audioraisevolume".action = volume-up;
       "xf86audiolowervolume".action = volume-down;

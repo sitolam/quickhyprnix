@@ -56,6 +56,9 @@
         niri-overview-launcher = {
           enabled = true;
         };
+        keybind-cheatsheet = {
+          enabled = true;
+        };
       };
     };
   };
