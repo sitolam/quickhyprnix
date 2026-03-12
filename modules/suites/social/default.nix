@@ -23,7 +23,7 @@ in
         }) # TODO add option to enable/disable vencord
         # TODO make vencord delclaritive
         element-desktop
-        telegram-desktop
+        # telegram-desktop #TODO: enable again when working
       ];
     };
   };
