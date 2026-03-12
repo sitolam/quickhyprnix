@@ -48,6 +48,7 @@ in
       libnotify
       wtype
       gpu-screen-recorder
+      kdePackages.qttools
     ];
     services.udev.packages = [ pkgs.ddcutil ];
     users.users.${username}.extraGroups = [ " i2c" ];
@@ -119,6 +120,9 @@ in
               right = [
                 {
                   id = "Tray";
+                }
+                {
+                  id = "plugin:kde-connect";
                 }
                 {
                   id = "plugin:timer";
