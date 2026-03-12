@@ -247,6 +247,7 @@ in
           audio = {
             externalMixer = "pavucontrol";
             prefferedPlayer = "spotify";
+            volumeFeedback = true;
           };
           network = {
             bluetoothRssiPollingEnabled = true;
