@@ -1,4 +1,9 @@
-{ config, inputs, ... }:
+{
+  config,
+  inputs,
+  apps,
+  ...
+}:
 
 {
   home.file.".config/noctalia/plugins" = {
@@ -16,6 +21,13 @@
   home.file.".config/noctalia/plugins/pomodoro/settings.json" = {
     text = builtins.toJSON {
       workDuration = 20;
+    };
+  };
+  home.file.".config/noctalia/plugins/usb-drive-manager/settings.json" = {
+    text = builtins.toJSON {
+      autoMount = true;
+      fileBrowser = apps.fileManager;
+      hideWhenEmpty = true;
     };
   };
 
@@ -60,6 +72,9 @@
           enabled = true;
         };
         screen-toolkit = {
+          enabled = true;
+        };
+        usb-drive-manager = {
           enabled = true;
         };
       };

@@ -21,6 +21,8 @@ let
     pkill quickshell || true
     nohup noctalia-shell >/dev/null 2>&1 &
   '';
+
+  apps = import ../niri/applications.nix { inherit pkgs; };
 in
 {
   #TODO split up into multiple files
@@ -62,6 +64,13 @@ in
       wl-screenrec
       ffmpeg
       gifski
+
+      # Usb drive manager dependencies
+      udisks
+      eudev
+      util-linux
+      coreutils
+      wl-clipboard
     ];
     services.udev.packages = [ pkgs.ddcutil ];
     users.users.${username}.extraGroups = [ " i2c" ];
@@ -77,7 +86,14 @@ in
 
       imports = [
         inputs.noctalia.homeModules.default
-        ./plugins.nix
+        (import ./plugins.nix {
+          inherit
+            inputs
+            config
+            pkgs
+            apps
+            ;
+        })
       ];
 
       # configure options
@@ -140,6 +156,9 @@ in
               right = [
                 {
                   id = "Tray";
+                }
+                {
+                  id = "plugin:usb-drive-manager";
                 }
                 {
                   id = "plugin:kde-connect";
