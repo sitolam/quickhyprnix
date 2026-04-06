@@ -49,6 +49,19 @@ in
       wtype
       gpu-screen-recorder
       kdePackages.qttools
+
+      # Screentoolkit plugin dependencies
+      grim
+      slurp
+      wl-clipboard
+      tesseract
+      imagemagick
+      zbar
+      curl
+      translate-shell
+      wl-screenrec
+      ffmpeg
+      gifski
     ];
     services.udev.packages = [ pkgs.ddcutil ];
     users.users.${username}.extraGroups = [ " i2c" ];
@@ -119,6 +132,9 @@ in
               center = [
                 {
                   id = "Workspace";
+                }
+                {
+                  id = "plugin:screen-toolkit";
                 }
               ];
               right = [

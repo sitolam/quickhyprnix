@@ -62,6 +62,9 @@
         keybind-cheatsheet = {
           enabled = true;
         };
+        screen-toolkit = {
+          enabled = true;
+        };
       };
     };
   };
