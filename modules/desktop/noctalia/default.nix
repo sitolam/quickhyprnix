@@ -183,9 +183,6 @@ in
                 {
                   id = "WallpaperSelector";
                 }
-                {
-                  id = "plugin:screen-recorder";
-                }
               ];
             };
           };

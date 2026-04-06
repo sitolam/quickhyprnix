@@ -38,9 +38,6 @@
         timer = {
           enabled = true;
         };
-        screen-recorder = {
-          enabled = true;
-        };
         unicode-picker = {
           enabled = true;
         };
