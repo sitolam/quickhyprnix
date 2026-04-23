@@ -13,13 +13,19 @@ let
   update = pkgs.writeShellScriptBin "update" ''
     env NH_FLAKE="$NH_FLAKE"
     clear
-    nh os switch --impure
-    if [ $? -ne 0 ]; then
-        notify-send "Error" "Failed to switch NixOS configuration."
+
+    nh os switch --impure "$@"
+    rc=$?
+
+    if [ $rc -ne 0 ]; then
+      notify-send "Error" "Failed to switch NixOS configuration."
     else
-        reload-noctalia
+      reload-noctalia
+      sleep 3
     fi
+
     read -n 1 -p 'Press any key to continue...'
+    exit $rc
   '';
 in
 {
