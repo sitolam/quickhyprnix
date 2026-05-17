@@ -35,6 +35,7 @@ in
         # NOTE install unstable packages by typing: unstable.<packageName>
         shellcheck # NOTE to check shell scripts (+ andere programmeertalen?) in vscode
         unstable.devenv
+        claude-code
       ];
     };
   };
