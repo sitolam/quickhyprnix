@@ -36,6 +36,7 @@ in
         shellcheck # NOTE to check shell scripts (+ andere programmeertalen?) in vscode
         unstable.devenv
         claude-code
+        nodejs
       ];
     };
   };
